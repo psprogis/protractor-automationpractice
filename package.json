@@ -1,0 +1,28 @@
+{
+  "name": "protractor-automationpractice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cleanup": "rimraf allure-results allure-report",
+    "test": "npm run cleanup && protractor protractor.conf.js",
+    "report": "allure generate && allure open",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "allure-commandline": "^2.13.0",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jasmine": "^4.1.1",
+    "rimraf": "^3.0.2",
+    "jasmine-allure-reporter": "^1.0.2",
+    "jasmine-custom-reporters": "^1.2.1",
+    "jasmine-spec-reporter": "^6.0.0",
+    "log4js": "^6.3.0",
+    "protractor": "^7.0.0"
+  }
+}
