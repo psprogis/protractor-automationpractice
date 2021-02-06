@@ -1,13 +1,24 @@
-const { setNonAngularSite } = require('../src/ui/browserHelpers');
+const { setNonAngularSite, waitElementVisible } = require('../src/ui/browserHelpers');
 
-describe('Login functionallity', () => {
-    
+describe('Login functionality', () => {
+
     beforeAll(async () => {
         await setNonAngularSite();
+
+        // create test user via rest api, db, etc.
     });
-    
+
     it('should allow to login with valid username and credentials', async () => {
-        await browser.get('http://automationpractice.com/index.php');
-        await browser.sleep(1000);
+        await ui.mainPage.open();
+
+        // TODO: use default values or env variables
+        await ui.mainPage.login({
+            email: 'test-bitpanda@gmail.com',
+            password: 'PPtz@7__vY!44v@',
+        });
+
+        const testUser = await ui.mainPage.getCurrentUserInfo();
+
+        expect(testUser).toEqual({ name: 'Testname', lastName: 'TestLastName' }, 'got wrong user after login');
     });
 });

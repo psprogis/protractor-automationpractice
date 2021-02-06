@@ -9,6 +9,7 @@ module.exports = {
         element: true,
         browser: true,
         protractor: true,
+        ui: true,
     },
 
     env: {

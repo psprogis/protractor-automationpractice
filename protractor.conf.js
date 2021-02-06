@@ -1,3 +1,4 @@
+// https://github.com/angular/protractor/blob/master/lib/config.ts
 // TODO: add browser logs
 
 require('./log4js-config').init();
@@ -5,6 +6,7 @@ const log = require('log4js').getLogger('conf-logger');
 
 const { SpecReporter } = require('jasmine-spec-reporter');
 const AllureReporter = require('jasmine-allure-reporter');
+// const { initApplicationUI } = require('./src/ui');
 
 exports.config = {
     // https://www.protractortest.org/#/browser-setup
@@ -29,17 +31,23 @@ exports.config = {
     ignoreUncaughtExceptions: true,
     specs: [
         'specs/login.spec.js',
+        'specs/search.spec.js',
     ],
 
     SELENIUM_PROMISE_MANAGER: false,
     framework: 'jasmine2',
     allScriptsTimeout: 300000,
     getPageTimeout: 120000,
+    baseUrl: 'http://automationpractice.com',
 
     onPrepare() {
-        const width = 1600;
-        const height = 900;
+        const width = 1800;
+        const height = 1200;
         browser.driver.manage().window().setSize(width, height);
+
+        global.ui = require('./src/ui').initApplicationUI({
+            baseUrl: 'http://automationpractice.com/index.php',
+        });
 
         // reporters
         jasmine.getEnv().addReporter(
