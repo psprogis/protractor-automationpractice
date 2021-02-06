@@ -33,6 +33,8 @@ module.exports = {
             },
         }],
         'no-use-before-define': 'off',
+        'arrow-parens': 'off',
+        'no-underscore-dangle': 'off',
     },
 
     plugins: [

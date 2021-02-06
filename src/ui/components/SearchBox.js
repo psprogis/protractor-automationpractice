@@ -1,4 +1,3 @@
-
 const { waitElementVisible } = require('../browserHelpers');
 
 class SearchBox {

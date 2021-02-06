@@ -1,4 +1,3 @@
-
 const BasePage = require('./BasePage');
 
 // TODO: remove argument

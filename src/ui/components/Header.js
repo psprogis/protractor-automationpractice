@@ -1,4 +1,3 @@
-
 class Header {
     constructor() {
         this.loginLink = $('.login');

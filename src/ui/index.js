@@ -1,8 +1,7 @@
-
 const MainPage = require('./components/MainPage');
 
 function initApplicationUI({ baseUrl }) {
-    const app = {}
+    const app = {};
     app.mainPage = new MainPage({ baseUrl });
 
     return app;

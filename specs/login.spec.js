@@ -1,4 +1,4 @@
-const { setNonAngularSite, waitElementVisible } = require('../src/ui/browserHelpers');
+const { setNonAngularSite } = require('../src/ui/browserHelpers');
 
 describe('Login functionality', () => {
 

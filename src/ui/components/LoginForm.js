@@ -1,8 +1,7 @@
-
 const { waitElementVisible } = require('../browserHelpers');
 
 class LoginForm {
-    constructor({id}) {
+    constructor({ id }) {
         this._root = $(`form#${id}`);
     }
 

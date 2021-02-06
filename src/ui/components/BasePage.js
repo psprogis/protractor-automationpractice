@@ -1,14 +1,13 @@
-
+const log = require('log4js').getLogger('base-page');
 const Header = require('./Header');
 const LoginForm = require('./LoginForm');
 const SearchBox = require('./SearchBox');
-const log = require('log4js').getLogger('base-page');
 const { waitElementVisible } = require('../browserHelpers');
 
 class BasePage {
     constructor() {
         this.header = new Header();
-        this.searchBox = new SearchBox({ id: 'searchbox' } );
+        this.searchBox = new SearchBox({ id: 'searchbox' });
     }
 
     async openLoginForm() {
@@ -27,7 +26,7 @@ class BasePage {
     async login({ email, password }) {
         const loginFrom = await this.openLoginForm();
 
-        return loginFrom.login( { email, password } );
+        return loginFrom.login({ email, password });
     }
 
     async getCurrentUserInfo() {
@@ -40,7 +39,7 @@ class BasePage {
         return {
             name: fullTextSplitted[0],
             lastName: fullTextSplitted[1],
-        }
+        };
     }
 
     async simpleSearch({ query }) {
@@ -51,23 +50,23 @@ class BasePage {
         const topCountLabel = root.$('.top-pagination-content .product-count');
 
         try {
-            await waitElementVisible({ element: topCountLabel, timeout: 2000 })
+            await waitElementVisible({ element: topCountLabel, timeout: 2000 });
         } catch (e) {
-            if (! e.message.includes('Wait timed out')) {
+            if (!e.message.includes('Wait timed out')) {
                 log.warn(`got unexpected error: ${e.message()}`);
                 throw e;
             }
 
             return {
-                warningMessage: (await root.$('.alert').getText()).trim()
+                warningMessage: (await root.$('.alert').getText()).trim(),
             };
         }
 
         const showingResultsText = (await topCountLabel.getText()).trim();
 
         // products component
-        let items = await $$('.product_list .product-container .right-block').map(async (elm) => {
-            let item = {};
+        const items = await $$('.product_list .product-container .right-block').map(async (elm) => {
+            const item = {};
 
             item.name = await elm.$('.product-name').getText();
             item.price = await elm.$('.price').getText();
@@ -85,8 +84,8 @@ class BasePage {
 
         return {
             showingResultsText,
-            items
-        }
+            items,
+        };
     }
 
 }

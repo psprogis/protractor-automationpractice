@@ -2,7 +2,6 @@
 // TODO: add browser logs
 
 require('./log4js-config').init();
-const log = require('log4js').getLogger('conf-logger');
 
 const { SpecReporter } = require('jasmine-spec-reporter');
 const AllureReporter = require('jasmine-allure-reporter');
@@ -30,7 +29,7 @@ exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
     ignoreUncaughtExceptions: true,
     specs: [
-        'specs/login.spec.js',
+        // 'specs/login.spec.js',
         'specs/search.spec.js',
     ],
 
@@ -45,6 +44,7 @@ exports.config = {
         const height = 1200;
         browser.driver.manage().window().setSize(width, height);
 
+        // eslint-disable-next-line global-require
         global.ui = require('./src/ui').initApplicationUI({
             baseUrl: 'http://automationpractice.com/index.php',
         });
