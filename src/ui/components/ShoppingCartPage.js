@@ -2,12 +2,8 @@ const BasePage = require('./BasePage');
 const { waitElementVisible } = require('../browserHelpers');
 
 class ShoppingCartPage extends BasePage {
-    constructor() {
-        super();
-    }
-
     async open() {
-        return browser.get('/index.php?controller=order')
+        return browser.get('/index.php?controller=order');
     }
 
     async getNumberOfProducts() {
@@ -16,9 +12,6 @@ class ShoppingCartPage extends BasePage {
 
     async deleteFirstProduct() {
         // move to table
-        //const firstProductRow = $$('#cart_summary tr').first();
-
-        //await firstProductRow.$('.icon-trash').click();
         return $$('#cart_summary tr .icon-trash').first().click();
     }
 
@@ -29,7 +22,7 @@ class ShoppingCartPage extends BasePage {
     async checkIfEmpty() {
         const alert = $('.alert');
 
-        await waitElementVisible({element: alert});
+        await waitElementVisible({ element: alert });
 
         return (await alert.getText()) === 'Your shopping cart is empty.';
     }

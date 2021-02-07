@@ -99,10 +99,10 @@ class BasePage {
             throw new Error(`Category ${name} cannot be selected.`);
         }
 
-        waitElementVisible({element: $(`#block_top_menu`)});
+        waitElementVisible({ element: $('#block_top_menu') });
         await $$(`a[title="${name}"]`).get(1).click();
 
-        return waitElementVisible({element: $('.heading-counter')});
+        return waitElementVisible({ element: $('.heading-counter') });
     }
 
     async addFirstProductToCart() {
@@ -111,11 +111,11 @@ class BasePage {
 
         log.info(position);
 
-        await scrollIntoView({element: firstProduct});
+        await scrollIntoView({ element: firstProduct });
 
-         await browser.actions()
-             .mouseMove(firstProduct)
-             .perform();
+        await browser.actions()
+            .mouseMove(firstProduct)
+            .perform();
 
         await firstProduct.$('[title="Add to cart"]').click();
 

@@ -16,7 +16,8 @@ describe('Shopping cart', () => {
         await ui.mainPage.selectCategory({ name: 'Dresses' });
         await ui.mainPage.addFirstProductToCart();
 
-        expect(ui.mainPage.shoppingCartWidget.getNumberOfProducts()).toBe("1", 'got wrong number of products in shopping cart');
+        expect(ui.mainPage.shoppingCartWidget.getNumberOfProducts())
+            .toBe('1', 'got wrong number of products in shopping cart');
     });
 
     it('can delete item from the shopping cart', async () => {
