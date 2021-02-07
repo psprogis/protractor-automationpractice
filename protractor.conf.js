@@ -20,17 +20,12 @@ exports.config = {
         },
     },
 
-    // uncomment for debug
-    // useBlockingProxy: true,
-    // highlightDelay: 3000,
-    // webDriverLogDir: 'logs',
-    // seleniumSessionId: '091cda6b89457082ee779ccc358f473c',
-
     seleniumAddress: 'http://localhost:4444/wd/hub',
     ignoreUncaughtExceptions: true,
     specs: [
-        // 'specs/login.spec.js',
+        'specs/login.spec.js',
         'specs/search.spec.js',
+        'specs/shopping.cart.spec.js',
     ],
 
     SELENIUM_PROMISE_MANAGER: false,
