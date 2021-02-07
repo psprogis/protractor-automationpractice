@@ -5,7 +5,6 @@ require('./log4js-config').init();
 
 const { SpecReporter } = require('jasmine-spec-reporter');
 const AllureReporter = require('jasmine-allure-reporter');
-// const { initApplicationUI } = require('./src/ui');
 
 exports.config = {
     // https://www.protractortest.org/#/browser-setup
@@ -21,6 +20,17 @@ exports.config = {
     },
 
     seleniumAddress: 'http://localhost:4444/wd/hub',
+
+    // directConnect: true,
+
+    // saucelab config
+    // sauceUser: "",
+    // sauceKey: "",
+    // sauceRegion: "ondemand.us-west-1.saucelabs.com:443/wd/hub",
+    // sauceSeleniumUseHttp: true,
+
+    // seleniumServerJar: '',
+
     ignoreUncaughtExceptions: true,
     specs: [
         'specs/login.spec.js',
