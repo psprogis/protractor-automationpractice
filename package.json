@@ -6,6 +6,7 @@
   "scripts": {
     "cleanup": "rimraf allure-results allure-report",
     "test": "npm run cleanup && protractor protractor.conf.js",
+    "report:generate": "allure generate",
     "report": "allure generate && allure open",
     "lint": "eslint ."
   },
