@@ -11,6 +11,8 @@ describe('Simple search', () => {
 
     beforeEach(async () => {
         await ui.mainPage.open();
+
+        allure.story('STORY-22: simple search functionality');
     });
 
     positiveScenariosInput.forEach(test => {

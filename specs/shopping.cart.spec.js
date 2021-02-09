@@ -10,6 +10,7 @@ describe('Shopping cart', () => {
     beforeEach(async () => {
         await ui.mainPage.open();
         await deleteAllCookies(); // for now it is enough to get fresh cart before each test
+        allure.story('STORY-33: shopping cart');
     });
 
     it('can add item to shopping cart', async () => {
