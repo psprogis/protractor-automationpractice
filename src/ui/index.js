@@ -1,9 +1,9 @@
 const MainPage = require('./components/MainPage');
 const ShoppingCartPage = require('./components/ShoppingCartPage');
 
-function initApplicationUI({ baseUrl }) {
+function initApplicationUI() {
     const app = {};
-    app.mainPage = new MainPage({ baseUrl });
+    app.mainPage = new MainPage();
     app.shoppingCartPage = new ShoppingCartPage();
 
     return app;
