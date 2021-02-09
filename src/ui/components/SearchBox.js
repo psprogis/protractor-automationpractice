@@ -1,3 +1,4 @@
+const SearchResults = require('./SearchResults');
 const { waitElementVisible } = require('../browserHelper');
 
 class SearchBox {
@@ -9,7 +10,9 @@ class SearchBox {
         await waitElementVisible({ element: this._root });
 
         await this._root.$('#search_query_top').clear().sendKeys(query);
-        return this._root.$('button[type="submit"]').click();
+        await this._root.$('button[type="submit"]').click();
+
+        return new SearchResults();
     }
 }
 

@@ -6,6 +6,7 @@ describe('Simple search', () => {
 
     beforeAll(async () => {
         await setNonAngularSite();
+        // TODO: create products for search: using REST api, db dump, etc.
     });
 
     beforeEach(async () => {
@@ -19,7 +20,7 @@ describe('Simple search', () => {
             log.info(searchResults);
 
             expect(searchResults.showingResultsText).toBe(test.result.showingResultsText);
-            expect(searchResults.items).toEqual(test.result.items);
+            expect(searchResults.items).toEqual(test.result.items, 'got wrong items in search result');
         });
     });
 

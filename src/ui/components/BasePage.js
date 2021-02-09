@@ -46,49 +46,7 @@ class BasePage {
     }
 
     async simpleSearch({ query }) {
-        await this.searchBox.search({ query });
-
-        // TODO: search results
-        const root = $('#center_column');
-        const topCountLabel = root.$('.top-pagination-content .product-count');
-
-        try {
-            await waitElementVisible({ element: topCountLabel, timeout: 2000 });
-        } catch (e) {
-            if (!e.message.includes('Wait timed out')) {
-                log.warn(`got unexpected error: ${e.message()}`);
-                throw e;
-            }
-
-            return {
-                warningMessage: (await root.$('.alert').getText()).trim(),
-            };
-        }
-
-        const showingResultsText = (await topCountLabel.getText()).trim();
-
-        // products component
-        const items = await $$('.product_list .product-container .right-block').map(async (elm) => {
-            const item = {};
-
-            item.name = await elm.$('.product-name').getText();
-            item.price = await elm.$('.price').getText();
-
-            if (await elm.$('.old-price').isPresent()) {
-                item.oldPrice = await elm.$('.old-price').getText();
-            }
-
-            if (await elm.$('.price-percent-reduction').isPresent()) {
-                item.priceReduction = await elm.$('.price-percent-reduction').getText();
-            }
-
-            return item;
-        });
-
-        return {
-            showingResultsText,
-            items,
-        };
+        return (await this.searchBox.search({ query })).getResults();
     }
 
     async selectCategory({ name }) {
