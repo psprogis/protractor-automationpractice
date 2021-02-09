@@ -7,7 +7,7 @@ class SearchBox {
     }
 
     async search({ query }) {
-        await waitElementVisible({ element: this._root });
+        await waitElementVisible({ element: this._root, timeout: 5000 });
 
         await this._root.$('#search_query_top').clear().sendKeys(query);
         await this._root.$('button[type="submit"]').click();
