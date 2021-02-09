@@ -1,20 +1,19 @@
 const { setNonAngularSite } = require('../src/ui/browserHelpers');
+const { getValueOrThrow } = require('../src/envHelper');
 
 describe('Login functionality', () => {
 
     beforeAll(async () => {
         await setNonAngularSite();
-
-        // create test user via rest api, db, etc.
+        // TODO: create test user via rest api, db, etc.
     });
 
     it('should allow to login with valid username and credentials', async () => {
         await ui.mainPage.open();
 
-        // TODO: use default values or env variables
-        await ui.mainPage.login({
-            email: 'test-bitpanda@gmail.com',
-            password: 'PPtz@7__vY!44v@',
+        (await ui.mainPage.openAuthenticationPage()).login({
+            email: getValueOrThrow('TEST_USER'),
+            password: getValueOrThrow('TEST_USER_PASSWORD'),
         });
 
         const testUser = await ui.mainPage.getCurrentUserInfo();
