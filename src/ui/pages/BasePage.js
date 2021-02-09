@@ -4,7 +4,7 @@ const Header = require('../components/Header');
 const SearchBox = require('../components/SearchBox');
 const ShoppingCartWidget = require('../components/ShoppingCartWidget');
 
-const { waitElementVisible, scrollIntoView } = require('../browserHelper');
+const { waitElementVisible } = require('../browserHelper');
 
 class BasePage {
     constructor() {
@@ -60,28 +60,6 @@ class BasePage {
         await $$(`a[title="${name}"]`).get(1).click();
 
         return waitElementVisible({ element: $('.heading-counter') });
-    }
-
-    async addFirstProductToCart() {
-        const firstProduct = await $$('.product_list .product-container').first();
-        const position = await firstProduct.getLocation();
-
-        log.info(position);
-
-        await scrollIntoView({ element: firstProduct });
-
-        await browser.actions()
-            .mouseMove(firstProduct)
-            .perform();
-
-        await firstProduct.$('[title="Add to cart"]').click();
-
-        const closeBtn = $('#layer_cart [title="Close window"]');
-        await waitElementVisible({ element: closeBtn });
-        await closeBtn.click();
-
-        // const clickScript = '(document.querySelector(\'#layer_cart [title="Close window"]\')).click()';
-        // await browser.executeScript(clickScript);
     }
 }
 
