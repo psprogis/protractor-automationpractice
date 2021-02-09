@@ -50,8 +50,12 @@ exports.config = {
         browser.driver.manage().window().setSize(width, height);
 
         // eslint-disable-next-line global-require
-        global.ui = require('./src/ui').initApplicationUI({
-            baseUrl: 'http://automationpractice.com/index.php',
+        global.ui = require('./src/ui').initApplicationUI();
+
+        // can be replaced with config module in the future
+        global.testConfig = Object.freeze({
+            LOGIN_TIMEOUT: 6000,
+            ELEMENT_VISIBLE_TIMEOUT: 3000,
         });
 
         // reporters

@@ -10,6 +10,7 @@ module.exports = {
         browser: true,
         protractor: true,
         ui: true,
+        testConfig: true,
     },
 
     env: {
