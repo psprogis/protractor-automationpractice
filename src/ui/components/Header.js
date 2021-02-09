@@ -1,3 +1,5 @@
+const { waitElementVisible } = require('../browserHelpers');
+
 class Header {
     constructor() {
         this.loginLink = $('.login');
@@ -5,6 +7,7 @@ class Header {
     }
 
     async isLoggedIn() {
+        await waitElementVisible({ element: $('.login') });
         return $('.login').isDisplayed();
     }
 

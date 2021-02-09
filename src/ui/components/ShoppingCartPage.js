@@ -3,7 +3,7 @@ const { waitElementVisible } = require('../browserHelpers');
 
 class ShoppingCartPage extends BasePage {
     async open() {
-        return browser.get('/index.php?controller=order');
+        return super.open({ url: '/index.php?controller=order' });
     }
 
     async getNumberOfProducts() {

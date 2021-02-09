@@ -16,8 +16,8 @@ class LoginForm {
 
         // TODO: check authentication errors
 
-        // move to Header ? or merge Header into BasePage, create login timeout
-        return waitElementVisible({ element: $('.logout'), timeout: 6000 });
+        // move to Header ? or merge Header into BasePage
+        return waitElementVisible({ element: $('.logout'), timeout: testConfig.LOGIN_TIMEOUT });
     }
 }
 

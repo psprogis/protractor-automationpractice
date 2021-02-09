@@ -1,7 +1,6 @@
 const log = require('log4js').getLogger('base-page');
 
 const Header = require('./Header');
-const LoginForm = require('./LoginForm');
 const SearchBox = require('./SearchBox');
 const ShoppingCartWidget = require('./ShoppingCartWidget');
 
@@ -14,7 +13,11 @@ class BasePage {
         this.shoppingCartWidget = new ShoppingCartWidget();
     }
 
-    async openLoginForm() {
+    async open({ url }) {
+        return browser.get(url);
+    }
+
+    async openAuthenticationPage() {
         const isLoggedIn = await this.header.isLoggedIn();
 
         if (!isLoggedIn) {
@@ -24,16 +27,12 @@ class BasePage {
 
         await this.header.clickLoginLink();
 
-        return new LoginForm({ id: 'login_form' });
-    }
-
-    async login({ email, password }) {
-        const loginFrom = await this.openLoginForm();
-
-        return loginFrom.login({ email, password });
+        // do not require auth page at the top, it will not be able to extend BasePage
+        return new (require('./AuthenticationPage'));
     }
 
     async getCurrentUserInfo() {
+        await waitElementVisible({ element: this.header.userInfo });
         const fullText = await this.header.userInfo.getText();
 
         log.info(`current user info: ${fullText}`);
