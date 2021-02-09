@@ -1,3 +1,4 @@
+const log = require('log4js').getLogger('products-page');
 const BasePage = require('./BasePage');
 const { waitElementVisible, scrollIntoView } = require('../browserHelper');
 
