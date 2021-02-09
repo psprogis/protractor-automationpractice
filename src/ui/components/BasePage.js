@@ -4,7 +4,7 @@ const Header = require('./Header');
 const SearchBox = require('./SearchBox');
 const ShoppingCartWidget = require('./ShoppingCartWidget');
 
-const { waitElementVisible, scrollIntoView } = require('../browserHelpers');
+const { waitElementVisible, scrollIntoView } = require('../browserHelper');
 
 class BasePage {
     constructor() {

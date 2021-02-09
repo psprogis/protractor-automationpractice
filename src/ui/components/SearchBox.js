@@ -1,4 +1,4 @@
-const { waitElementVisible } = require('../browserHelpers');
+const { waitElementVisible } = require('../browserHelper');
 
 class SearchBox {
     constructor({ id }) {

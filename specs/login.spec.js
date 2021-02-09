@@ -1,4 +1,4 @@
-const { setNonAngularSite } = require('../src/ui/browserHelpers');
+const { setNonAngularSite } = require('../src/ui/browserHelper');
 const { getValueOrThrow } = require('../src/envHelper');
 
 describe('Login functionality', () => {
@@ -9,6 +9,8 @@ describe('Login functionality', () => {
     });
 
     it('should allow to login with valid username and credentials', async () => {
+        allure.story('STORY-1: user should be able to login');
+
         await ui.mainPage.open();
 
         (await ui.mainPage.openAuthenticationPage()).login({

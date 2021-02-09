@@ -13,9 +13,9 @@ Write an automated test for an e-commerce site, feel free to pick any:
 - Please provide us steps how to run the written test
 
 ## todo
-- add allure steps.
 - create "fast login", add products to cart and other operations using post requests.
 - update local run preconditions section
+- add allure steps.
 - create Dockerfile for tests with proper node environment ?
 
 ## local run

@@ -1,5 +1,5 @@
 const log = require('log4js').getLogger('spec-logger');
-const { setNonAngularSite } = require('../src/ui/browserHelpers');
+const { setNonAngularSite } = require('../src/ui/browserHelper');
 const positiveScenariosInput = require('../test-data/simpleSearch');
 
 describe('Simple search', () => {

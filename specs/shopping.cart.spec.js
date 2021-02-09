@@ -1,5 +1,5 @@
 const log = require('log4js').getLogger('spec-logger');
-const { setNonAngularSite, deleteAllCookies } = require('../src/ui/browserHelpers');
+const { setNonAngularSite, deleteAllCookies } = require('../src/ui/browserHelper');
 
 describe('Shopping cart', () => {
 

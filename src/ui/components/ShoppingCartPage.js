@@ -1,5 +1,5 @@
 const BasePage = require('./BasePage');
-const { waitElementVisible } = require('../browserHelpers');
+const { waitElementVisible } = require('../browserHelper');
 
 class ShoppingCartPage extends BasePage {
     async open() {
