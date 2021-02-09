@@ -19,7 +19,7 @@ class SearchResults {
 
             // no results were found, just return warning/error message
             return {
-                warningMessage: (await root.$('.alert').getText()).trim(),
+                warningMessage: (await this._root.$('.alert').getText()).trim(),
             };
         }
 
