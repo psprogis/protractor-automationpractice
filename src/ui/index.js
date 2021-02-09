@@ -1,5 +1,5 @@
-const MainPage = require('./components/MainPage');
-const ShoppingCartPage = require('./components/ShoppingCartPage');
+const MainPage = require('./pages/MainPage');
+const ShoppingCartPage = require('./pages/ShoppingCartPage');
 
 function initApplicationUI() {
     const app = {};

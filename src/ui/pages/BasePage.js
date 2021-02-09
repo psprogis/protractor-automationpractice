@@ -1,8 +1,8 @@
 const log = require('log4js').getLogger('base-page');
 
-const Header = require('./Header');
-const SearchBox = require('./SearchBox');
-const ShoppingCartWidget = require('./ShoppingCartWidget');
+const Header = require('../components/Header');
+const SearchBox = require('../components/SearchBox');
+const ShoppingCartWidget = require('../components/ShoppingCartWidget');
 
 const { waitElementVisible, scrollIntoView } = require('../browserHelper');
 

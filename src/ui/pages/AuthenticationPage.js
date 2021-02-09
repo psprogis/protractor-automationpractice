@@ -1,5 +1,5 @@
 const BasePage = require('./BasePage');
-const LoginForm = require('./LoginForm');
+const LoginForm = require('../components/LoginForm');
 
 class AuthenticationPage extends BasePage {
     constructor() {
