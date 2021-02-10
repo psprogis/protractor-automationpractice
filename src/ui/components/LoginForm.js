@@ -8,7 +8,7 @@ class LoginForm {
     async login({ email, password }) {
         const emailInput = this._root.$('#email');
 
-        await waitElementVisible({ element: emailInput });
+        await waitElementVisible({ element: emailInput, timeout: 5000 });
         await emailInput.clear().sendKeys(email);
         await this._root.$('#passwd').clear().sendKeys(password);
 
