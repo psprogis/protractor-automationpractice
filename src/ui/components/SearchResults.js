@@ -1,3 +1,4 @@
+const log = require('log4js').getLogger('search-results');
 const { waitElementVisible } = require('../browserHelper');
 
 class SearchResults {

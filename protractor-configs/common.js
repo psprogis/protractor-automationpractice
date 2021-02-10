@@ -18,7 +18,7 @@ exports.config = {
     getPageTimeout: 120000,
     baseUrl: 'http://automationpractice.com',
 
-    onPrepare: function() {
+    onPrepare() {
         const width = 1800;
         const height = 1200;
         browser.driver.manage().window().setSize(width, height);

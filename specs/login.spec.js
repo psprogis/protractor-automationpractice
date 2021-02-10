@@ -21,5 +21,5 @@ describe('Login functionality', () => {
         const testUser = await ui.mainPage.getCurrentUserInfo();
 
         expect(testUser).toEqual({ name: 'Testname', lastName: 'TestLastName' }, 'got wrong user after login');
-    });
+    }, 4 * 60 * 1000); // login is very slow sometimes
 });

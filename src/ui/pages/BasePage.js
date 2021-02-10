@@ -28,7 +28,7 @@ class BasePage {
         await this.header.clickLoginLink();
 
         // do not require auth page at the top, it will not be able to extend BasePage
-        return new (require('./AuthenticationPage'));
+        return new (require('./AuthenticationPage'))(); // eslint-disable-line global-require
     }
 
     async getCurrentUserInfo() {

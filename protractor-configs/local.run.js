@@ -1,5 +1,5 @@
-let config = require('./common').config;
-const log = require('log4js').getLogger('local-run');
+const { config } = require('./common');
+const log = require('log4js').getLogger('local-run'); // eslint-disable-line
 
 exports.config = Object.assign(config, {
     // https://www.protractortest.org/#/browser-setup
