@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "cleanup": "rimraf allure-results allure-report",
-    "test": "npm run cleanup && protractor protractor.conf.js",
+    "test": "npm run cleanup && protractor protractor-configs/local.run.js",
+    "test:browserstack": "npm run cleanup && protractor protractor-configs/browserstack.run.js",
     "report:generate": "allure generate",
     "report": "allure generate && allure open",
     "lint": "eslint ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Pavlo Sprogis <pavlo.sprogis@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "allure-commandline": "^2.13.0",
