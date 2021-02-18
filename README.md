@@ -42,7 +42,7 @@ v12.20.0
 npm -v
 6.14.8
 ```
-* (optioal) webdriver-manager (installed with protractor), run `webdriver-manager update` to get the latest versions of drivers
+* (optional) webdriver-manager (installed with protractor), run `webdriver-manager update` to get the latest versions of drivers
 ```bash
 npm ls -g webdriver-manager
 /usr/local/lib
