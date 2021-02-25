@@ -7,6 +7,7 @@
     "cleanup": "rimraf allure-results allure-report",
     "test": "npm run cleanup && protractor protractor-configs/local.run.js",
     "test:browserstack": "npm run cleanup && protractor protractor-configs/browserstack.run.js",
+    "test:gitlab": "npm run cleanup && protractor protractor-configs/gitlab.run.js",
     "report:generate": "allure generate",
     "report": "allure generate && allure open",
     "lint": "eslint ."
