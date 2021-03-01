@@ -64,9 +64,9 @@ webdriver-manager start
 ```
 
 ### How to run
-* Unzip repo
+* Clone repo
 * Install dependencies (`npm i`)
-* Since we cannot create user before tests (yet) you should create 1 test user manually with Testname name and TestLastName lastname.
+* Since we cannot create user before tests (yet) you should create 1 test user manually with `Testname` name and `TestLastName` lastname.
 * Setup 2 env variables before stating tests: `TEST_USER` and `TEST_USER_PASSWORD`. They are required for `login.spec`.
 * Run test (`npm t`)
 * Open html report (```npm run report```)
@@ -97,8 +97,11 @@ Alternatively there is an existing Digital Ocean droplet with selenoid: [selenoi
 Repository contains .github/workflows folder with 1 workflow for github actions.
 ![github actions run](screenshots/github-actions.png "github-actions")
 
+## Run on Gitlab
+Gitlab [project](https://gitlab.com/psprogis/protractor-automationpractice).
+
 ## Alternatives
-I used Jenkins and GitHub Actions only as an example, but there are plenty of other good tools: Bamboo, TravisCI, GitLab, etc.
+I used Jenkins, GitHub Actions and Gitlab only as an example, but there are plenty of other good tools: Bamboo, TravisCI, TeamCity, etc.
 
 ## Run tests in cloud
 There are at least 2 popular platforms: saucelab and [browserstack](https://www.browserstack.com/), I ran my tests on browserstack
