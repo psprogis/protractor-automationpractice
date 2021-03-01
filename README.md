@@ -8,10 +8,11 @@ NOTE: this repo contains only some tests, as an example, it does not cover all t
     1. [Preconditions and environment](#preconditions-and-environment)
     2. [How to run](#how-to-run)
 4. [Run on CI](#run-on-ci)
-    1. [Run selenoid](#run-selenoid)
-5. [Run on github actions](#run-on-github-actions)    
-6. [Alternatives](#alternatives)
-7. [Run tests in cloud](#run-tests-in-cloud)
+    1. [Local jenkins and selenoid](#local-jenkins-and-selenoid)
+    2. [Github actions](#github-actions)
+    3. [Gilab](#gitlab)   
+    4. [Alternatives](#alternatives)
+5. [Run tests in cloud](#run-tests-in-cloud)
 
 ## task description
 Write an automated test for an e-commerce site, feel free to pick any:
@@ -87,20 +88,20 @@ Starting web server...
 ## Run on CI
 I will use the easiest setup: local jenkins + local selenoid. Jenkins can be installed locally or run as a [docker container](https://hub.docker.com/r/jenkins/jenkins).
 
-### Run selenoid
+### Local jenkins and selenoid
 You can find details how to start selenoid locally here: [start selenoid](https://aerokube.com/selenoid/latest/)
 Alternatively there is an existing Digital Ocean droplet with selenoid: [selenoid droplet](https://marketplace.digitalocean.com/apps/selenoid)
 ![jenkins and selenoid](screenshots/selenoid-and-jenkins.png "jenkins and selenoid")
 ![jenkins allure report](screenshots/jenkins-allure-report.png "jenkins allure report")
 
-## Run on github actions
+### Github actions
 Repository contains .github/workflows folder with 1 workflow for github actions.
 ![github actions run](screenshots/github-actions.png "github-actions")
 
-## Run on Gitlab
+### Gitlab
 Gitlab [project](https://gitlab.com/psprogis/protractor-automationpractice).
 
-## Alternatives
+### Alternatives
 I used Jenkins, GitHub Actions and Gitlab only as an example, but there are plenty of other good tools: Bamboo, TravisCI, TeamCity, etc.
 
 ## Run tests in cloud
