@@ -1,28 +1,16 @@
-# UI assignment 
-NOTE: this repo contains only some tests, as an example, it does not cover all the functionality of the site.
+This repo contains only some examples of UI tests for the [site](http://automationpractice.com/index.php), it does not cover all the functionality of the site.
 
 **Table of Contents**
-1. [Task description](#task-description)
-2. [TODO](#todo)
-3. [Local run](#local-run)
+1. [TODO](#todo)
+2. [Local run](#local-run)
     1. [Preconditions and environment](#preconditions-and-environment)
     2. [How to run](#how-to-run)
-4. [Run on CI](#run-on-ci)
+3. [Run on CI](#run-on-ci)
     1. [Local jenkins and selenoid](#local-jenkins-and-selenoid)
     2. [Github actions](#github-actions)
     3. [Gilab](#gitlab)   
     4. [Alternatives](#alternatives)
-5. [Run tests in cloud](#run-tests-in-cloud)
-
-## task description
-Write an automated test for an e-commerce site, feel free to pick any:
-(e.g. http://automationpractice.com/index.php):
-- You could implement some of the following tests:
-    - Login, searching for products using 3 different criteria, adding products to the cart, removing products from the cart, checkout process, if possible, implement a login and sign-up test;
-    - Report any bugs you find by writing a bug ticket
-- Please prepare a document with the test flows and test cases. The documents have to be clear both to the developer and to someone who is not familiar with the technology;
-- Run tests in a continuous integration tool and optionally in the cloud.
-- Please provide us steps how to run the written test
+4. [Run tests in cloud](#run-tests-in-cloud)
 
 ## todo
 - create "fast login", add products to cart and other operations using post requests.
